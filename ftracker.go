@@ -144,8 +144,8 @@ func swimmingMeanSpeed(lengthPool, countPool int, duration float64) float64 {
 // weight float64 — вес пользователя.
 func SwimmingSpentCalories(lengthPool, countPool int, duration, weight float64) float64 {
 	// ваш код здесь
-	k1 := swimmingMeanSpeed(lengthPool, countPool, duration) + 1.1
-	calories := k1 * 2 * weight * duration
+	k1 := swimmingMeanSpeed(lengthPool, countPool, duration) + swimmingCaloriesMeanSpeedShift
+	calories := k1 * swimmingCaloriesWeightMultiplier * weight * duration
 
 	return calories
 }
